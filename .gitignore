@@ -1,0 +1,12 @@
+# Dependencias de Node.js
+node_modules/
+package-lock.json
+
+# Archivos del editor y del sistema
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db
+
+# Archivos temporales y compilados
+dist/
