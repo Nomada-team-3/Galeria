@@ -32,29 +32,44 @@
     <main>
         <!--Agregar funcion para los filtros-->
         <aside id="filters">
-            <button id="btn-gris" class="btn btn-outline-primary"> 
-                <h3>Gray</h3> 
-            </button>
-            <button id="btn-sepia" class="btn btn-outline-primary"> 
-                <h3>Sepia</h3> 
-            </button>
-            <button id="btn-desenfoque" class="btn btn-outline-primary"> 
-                <h3>Desenfoque</h3> 
-            </button>
-            <button id="btn-brillo" class="btn btn-outline-primary"> 
-                <h3>Brillo</h3> 
-            </button>
-            <button id="btn-contraste" class="btn btn-outline-primary"> 
-                <h3>Contraste</h3> 
-            </button>
-            <button id="btn-rotar" class="btn btn-outline-primary"> 
-                <h3>Negativo</h3> 
-            </button>
-   
+            <div class="boton-filtro">
+                <button id="btn-gris" class="btn btn-primary btn-sm"> 
+                    <h3>Gray</h3> 
+                </button>
+                <input id="input-gris" type="range" class="form-range" step="10" min="0" max="100" value="100">
+            </div>
+            <div class="boton-filtro">
+                <button id="btn-desenfoque" class="btn btn-primary btn-sm"> 
+                    <h3>Desenfoque</h3> 
+                </button>
+                <input id="imput-desenfoque" type="range" class="form-range" step="1" min="0" max="10" value="5">
+            </div>
+            <div class="boton-filtro">
+                <button id="btn-brillo" class="btn btn-primary btn-sm"> 
+                    <h3>Brillo</h3> 
+                </button>
+                <input id="imput-brillo" type="range" class="form-range" step="10" min="30" max="200" value="200">
+            </div>
+            <div class="boton-filtro">
+                <button id="btn-contraste" class="btn btn-primary btn-sm"> 
+                    <h3>Contraste</h3> 
+                </button>
+                <input id="imput-contraste" type="range" class="form-range" step="25" min="100" max="700" value="200">
+            </div>
+            <div class="boton-filtro">
+                <button id="btn-sepia" class="btn btn-primary btn-sm"> 
+                    <h3>Sepia</h3> 
+                </button>
+            </div>
+            <div class="boton-filtro">
+                <button id="btn-rotar" class="btn btn-primary btn-sm"> 
+                    <h3>Negativo</h3> 
+                </button>
+            </div>   
         </aside>
         <aside id="making">
             <div>
-                <img id="objeto" src="src/img/example.webp" alt="objeto">
+                <img id="objeto" src="src/img/example.webp" class="img-fluid" alt="objeto">
             </div>
         </aside>
     </main>

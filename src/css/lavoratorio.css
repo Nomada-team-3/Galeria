@@ -50,18 +50,17 @@ main {
     margin-top: 12vh;
     width: 98%;
     height: 82vh;
-    border: 2px solid red;
     display: flex;
     gap: 1vh;
 }
 
 #filters {
     width: 20%;
-    height: 97%;
+    height: 80vh;
     display: grid;
-    gap: 2vh;
-    margin: 1vh;
-    
+    gap: 1vh;
+    margin: 1vh 1vh 0vh 1vh;   
+    overflow-y: auto; 
 }
 
 #making {
@@ -73,6 +72,18 @@ main {
     justify-content: center;
 }
 
+.boton-filtro {
+    width: 96%;
+    margin: 1vh 1vh 0vh 0vh;
+    padding: 1.1vh;
+    border: 1px #0066ff solid;
+    border-radius: 10px;
+    display: grid;
+}
+
+.boton-filtro input {
+    margin-top: 2VH;
+}
 
 #objeto {
     margin: 2vh;
