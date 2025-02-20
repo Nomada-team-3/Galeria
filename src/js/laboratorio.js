@@ -1,110 +1,88 @@
 const imagen = document.getElementById("objeto");
 
-//filtro para grises
-let gris = document.getElementById("btn-gris");
-let grisBool = true;
+let agregarFiltro = {
+    grises: false,
+    sepia: false,
+    desemfoque: false,
+    brillo: false,
+    contraste: false,
+    rotar: false,
+}
 
-gris.addEventListener("click", () => {
-    if (grisBool){
-        imagen.style.filter = "grayscale(100%)";
-        grisBool = !grisBool;
-        gris.style.background = "blue";
-    }
-    else{
-        imagen.style.filter = ("grayscale(0%)");
-        grisBool = !grisBool;
-        gris.style.background = "";
-
-    }
-})
-
-//filtro para sepia
-let sep = document.getElementById("btn-sepia");
-let sepBool = true;
-
-sep.addEventListener("click", () => {
-    if (sepBool){
-        imagen.style.filter = "sepia(100%)";
-        sepBool = !sepBool;
-        sep.style.background = "blue";
-    }
-    else{
-        imagen.style.filter = ("");
-        sepBool = !sepBool;
-        sep.style.background = "";
-
-    }
-})
-
-//filtro para desenfoque
+let grises = document.getElementById("btn-gris");
+    grises.addEventListener("click", () => {
+        agregarFiltro.grises = !agregarFiltro.grises;
+        aplicarFiltro();
+        aplicarColor(agregarFiltro.grises,grises);
+    })
+let sepia = document.getElementById("btn-sepia");
+    sepia.addEventListener("click", () => {
+        agregarFiltro.sepia = !agregarFiltro.sepia;
+        aplicarFiltro();
+        aplicarColor(agregarFiltro.sepia,sepia);
+    })
 let desemfoque = document.getElementById("btn-desenfoque");
-let desBool = true;
-
-desemfoque.addEventListener("click", () => {
-    if (desBool){
-        imagen.style.filter = "blur(5px)";
-        desBool = !desBool;
-        desemfoque.style.background = "blue";
-    }
-    else{
-        imagen.style.filter = ("");
-        desBool = !desBool;
-        desemfoque.style.background = "";
-
-    }
-})
-
-//filtro para brillo
+    desemfoque.addEventListener("click", () => {
+        agregarFiltro.desemfoque = !agregarFiltro.desemfoque;
+        aplicarFiltro();
+        aplicarColor(agregarFiltro.desemfoque,desemfoque);
+    })
 let brillo = document.getElementById("btn-brillo");
-let briBool = true;
-
-brillo.addEventListener("click", () => {
-    if (briBool){
-        imagen.style.filter = "brightness(200%)";
-        briBool = !briBool;
-        brillo.style.background = "blue";
-    }
-    else{
-        imagen.style.filter = ("");
-        briBool = !briBool;
-        brillo.style.background = "";
-
-    }
-})
-
-//filtro para contraste
+    brillo.addEventListener("click", () => {
+        agregarFiltro.brillo = !agregarFiltro.brillo;
+        aplicarFiltro();
+        aplicarColor(agregarFiltro.brillo,brillo);
+    })
 let contraste = document.getElementById("btn-contraste");
-let contrasBool = true;
+    contraste.addEventListener("click", () => {
+        agregarFiltro.contraste = !agregarFiltro.contraste;
+        aplicarFiltro();
+        aplicarColor(agregarFiltro.contraste,contraste);
+    })
+let rotar = document.getElementById("btn-rotar");
+    rotar.addEventListener("click", () => {
+        agregarFiltro.rotar = !agregarFiltro.rotar;
+        aplicarFiltro();
+        aplicarColor(agregarFiltro.rotar,rotar);
+    })
 
-contraste.addEventListener("click", () => {
-    if (contrasBool){
-        imagen.style.filter = "contrast(200%)";
-        contrasBool = !contrasBool;
-        contraste.style.background = "blue";
+function aplicarColor (bool,variable){
+    if (bool) {
+        variable.style.background = "blue";
     }
     else{
-        imagen.style.filter = ("");
-        contrasBool = !contrasBool;
-        contraste.style.background = "";
-
+        variable.style.background = "";
     }
-})
+}
 
-//filtro para negativo
-let rotar = document.getElementById("btn-rotar");
-let rotaBool = true;
+function aplicarFiltro (){
 
-rotar.addEventListener("click", () => {
-    if (rotaBool){
-        imagen.style.filter = "invert(100%)";
-        rotaBool = !briBool;
+    let filtrosAplicados = [];
+    let colorActivado = [];
+
+    if (agregarFiltro.contraste) {
+        filtrosAplicados.push("contrast(200%)");
+    }
+    if (agregarFiltro.rotar) {
+        filtrosAplicados.push("invert(100%)");
         rotar.style.background = "blue";
     }
-    else{
-        imagen.style.filter = ("");
-        rotaBool = !rotaBool;
-        rotar.style.background = "";
-
+    if (agregarFiltro.sepia) {
+        filtrosAplicados.push("sepia(100%)");
+        sepia.style.background = "blue";
     }
-})
+    if (agregarFiltro.brillo) {
+        filtrosAplicados.push("brightness(200%)");
+        brillo.style.background = "blue";
+    }
+    if (agregarFiltro.desemfoque) {
+        filtrosAplicados.push("blur(5px)");
+        desemfoque.style.background = "blue";
+    }
+    if (agregarFiltro.grises) {
+        filtrosAplicados.push("grayscale(100%)");
+        grises.style.background = "blue";
+    }
 
+    imagen.style.filter = filtrosAplicados.join(" ");
+}
