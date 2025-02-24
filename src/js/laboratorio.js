@@ -14,9 +14,11 @@ let grises = document.getElementById("btn-gris");
 let inputGrises = document.getElementById("input-gris");
     grises.addEventListener("click", () => {
         agregarFiltro.grises.bool = !agregarFiltro.grises.bool;
+        mostarImput(agregarFiltro.grises.bool,inputGrises);
         aplicarFiltro();
         aplicarColor(agregarFiltro.grises.bool,grises);
     })
+    
     inputGrises.addEventListener("input", () => {
         if(agregarFiltro.grises.bool){
             agregarFiltro.grises.valor = inputGrises.value;
@@ -30,6 +32,7 @@ let desemfoque = document.getElementById("btn-desenfoque");
 let inputDesemfoque =document.getElementById("imput-desenfoque");
     desemfoque.addEventListener("click", () => {
         agregarFiltro.desemfoque.bool = !agregarFiltro.desemfoque.bool;
+        mostarImput(agregarFiltro.desemfoque.bool,inputDesemfoque);
         aplicarFiltro();
         aplicarColor(agregarFiltro.desemfoque.bool,desemfoque);
     })
@@ -46,8 +49,9 @@ let brillo = document.getElementById("btn-brillo");
 let inputBrillo =document.getElementById("imput-brillo");
     brillo.addEventListener("click", () => {
         agregarFiltro.brillo.bool = !agregarFiltro.brillo.bool;
+        mostarImput(agregarFiltro.brillo.bool,inputBrillo);
         aplicarFiltro();
-        aplicarColor(agregarFiltro.brillo.bool,agregarFiltro.brillo);
+        aplicarColor(agregarFiltro.brillo.bool,brillo);
     })
     inputBrillo.addEventListener("input", () => {
         if(agregarFiltro.brillo.bool){
@@ -62,8 +66,9 @@ let contraste = document.getElementById("btn-contraste");
 let inputContraste =document.getElementById("imput-contraste");
     contraste.addEventListener("click", () => {
         agregarFiltro.contraste.bool = !agregarFiltro.contraste.bool;
+        mostarImput(agregarFiltro.contraste.bool,inputContraste);
         aplicarFiltro();
-        aplicarColor(agregarFiltro.contraste,contraste);
+        aplicarColor(agregarFiltro.contraste.bool,contraste);
     })
     inputContraste.addEventListener("input", () => {
         if(agregarFiltro.contraste.bool){
@@ -85,7 +90,7 @@ let rotar = document.getElementById("btn-rotar");
     rotar.addEventListener("click", () => {
         agregarFiltro.rotar = !agregarFiltro.rotar;
         aplicarFiltro();
-        aplicarColor(agregarFiltro.rotar);
+        aplicarColor(agregarFiltro.rotar,rotar);
     })
 
 //funcion de cambio de color al activar el boton
@@ -95,6 +100,17 @@ function aplicarColor (bool,variable){
     }
     else{
         variable.style.background = "";
+    }
+}
+
+//funcion de mostar/ocultar barra dinamica
+function mostarImput (bool,btn) {
+    if(bool){
+        btn.classList.add("mostrar");
+        btn.classList.remove("ocultar");
+    }else{
+        btn.classList.add("ocultar");
+        btn.classList.remove("mostrar");
     }
 }
 //funcion principal para aplicar filtros

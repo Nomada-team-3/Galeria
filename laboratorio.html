@@ -9,52 +9,43 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img  class="logo" src="src/img/Logo.webp" alt="logo">
+        <a href="galery.html"><img  class="logo" src="src/img/Logo.webp" alt="logo">
         </a>
-        <nav>
-            <a href="Galery.html" >
-                <button type="button" class="btn btn-primary btn-lg">Galeria
-                </button></a>
-            <a href="#">
-                <button type="button" class="btn btn-primary btn-lg">Lavoratorio
-                </button></a>
-        </nav>
-        <nav>
-            <a href="#">
-                <button type="button" class="btn btn-primary btn-lg">Informacion
-                </button></a>
-            <a href="#">
-                <button type="button" class="btn btn-primary btn-lg">Asistencia
-                </button></a>
-        </nav>
+        <h2>lavoratorio</h2>
+        <a id="laboratorio" href="laboratorio.html">
+            <button>
+                Agregar Imagen
+            </button>
+        </a>
     </header>
-
     <main>
         <!--Agregar funcion para los filtros-->
         <aside id="filters">
+            <br>
+            <br>
             <div class="boton-filtro">
                 <button id="btn-gris" class="btn btn-primary btn-sm"> 
                     <h3>Gray</h3> 
                 </button>
-                <input id="input-gris" type="range" class="form-range" step="10" min="0" max="100" value="100">
+                <input id="input-gris" type="range" class="form-range ocultar" step="10" min="0" max="100" value="100">
             </div>
             <div class="boton-filtro">
                 <button id="btn-desenfoque" class="btn btn-primary btn-sm"> 
                     <h3>Desenfoque</h3> 
                 </button>
-                <input id="imput-desenfoque" type="range" class="form-range" step="1" min="0" max="10" value="5">
+                <input id="imput-desenfoque" type="range" class="form-range ocultar" step="1" min="0" max="10" value="5">
             </div>
             <div class="boton-filtro">
                 <button id="btn-brillo" class="btn btn-primary btn-sm"> 
                     <h3>Brillo</h3> 
                 </button>
-                <input id="imput-brillo" type="range" class="form-range" step="10" min="30" max="200" value="200">
+                <input id="imput-brillo" type="range" class="form-range ocultar" step="10" min="30" max="200" value="200">
             </div>
             <div class="boton-filtro">
                 <button id="btn-contraste" class="btn btn-primary btn-sm"> 
                     <h3>Contraste</h3> 
                 </button>
-                <input id="imput-contraste" type="range" class="form-range" step="25" min="100" max="700" value="200">
+                <input id="imput-contraste" type="range" class="form-range ocultar" step="25" min="100" max="700" value="200">
             </div>
             <div class="boton-filtro">
                 <button id="btn-sepia" class="btn btn-primary btn-sm"> 
@@ -76,17 +67,6 @@
             </div>
         </aside>
     </main>
-
-    <footer>
-        <a href="#">git-de-integrante</a>
-        <a href="#">git-de-integrante</a>
-        <a href="#">git-de-integrante</a>
-        <a href="#">git-de-integrante#</a>
-        <a href="#">git-de-integrante#</a>
-        <a href="#">git-de-integrante#</a>
-        <a href="#">git-de-integrante#</a>
-    </footer>
-    <!--Relleno en etapa final-->
 <script src="src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 <script src="src/js/laboratorio.js" ></script>
 </body>
