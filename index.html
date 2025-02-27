@@ -1,22 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto</title>
+    <title>Galería de Imágenes</title>
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-
 <body>
     <div class="container text-center mt-5">
-        <h1 class="text-primary">¡Hola, Bootstrap!</h1>
-        <button class="btn btn-success">Click Aquí</button>
+        <h1 class="text-primary">Galería de Imágenes</h1>
+        
+        <!-- Category Management -->
+        <div class="category-management mb-4">
+            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                <i class="bi bi-gear"></i> Gestionar Categorías
+            </button>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="upload-section mb-4">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-auto">
+                    <select id="categorySelect" class="form-select">
+                        <option value="" disabled selected>Selecciona una categoría</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <label for="imageUpload" class="btn btn-success">
+                        <i class="bi bi-upload"></i> Añadir Imagen
+                    </label>
+                    <input type="file" id="imageUpload" accept="image/*" class="d-none" multiple>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div id="filterButtons" class="btn-group mb-4">
+            <button class="btn btn-primary filter-btn active" data-filter="all">Todas</button>
+        </div>
+
+        <!-- Empty Image Gallery -->
+        <div class="row image-gallery g-4">
+            <!-- Images will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Category Modal -->
+    <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="categoryModalLabel">Gestionar Categorías</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class->modal-body">
+                    <form id="addCategoryForm" class="mb-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="newCategory" placeholder="Nueva categoría">
+                            <button class="btn btn-primary" type="submit">Añadir</button>
+                        </div>
+                    </form>
+                    <ul id="categoryList" class="list-group">
+                        <!-- Categories will be listed here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Imagen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="" id="modalImage" class="img-fluid" alt="Modal Image">
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="src/js/main.js"></script>
 </body>
-
 </html>
